@@ -1,0 +1,31 @@
+  <section class="drop-area">
+        <ul class="nav nav-tabs justify-content-center" id="main-">
+            <li class="nav-item active"><a class="nav-link active" data-toggle="tab" href="#doc-view">Document View</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#page-view">Page View</a></li>
+        </ul>
+        <div class="loader hidden"></div>
+        <form [action]="settings.targetURL" id="main-dropzone" method="post" class="dropzone">
+            <div id="drop-message" class="btn btn-group btn-primary dz-default dz-message"><span class="btn-lg"><i class="fas fa-file-upload"></i>Click here to upload</span></div>
+            <div id="drop-message-zone">Drop files here</div>
+            <div class="tab-content">
+                <div id="doc-view" class="tab-pane active">
+                    <div id="files-container">
+                        <ol id="pdf-files-list" class="viewer dropzone-previews">
+                        </ol>
+                    </div>
+                </div>
+                <div id="page-view" class="tab-pane">
+                    <div id="pages-container">
+                        <ol id="pdf-pages-list" class="viewer">
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="pageOrder" id="pageOrder">
+            <input type="hidden" name="fileOrder" id="fileOrder">
+        </form>
+    </section>
+    <div class="bottom-fixed">
+        <button (click)="submitFiles()" class="submitBtn btn btn-primary btn-sm mx-2">{{ settings.btnSubmitText }}</button>
+        <button (click)="resetDropzone()" id="reset-button" class="btn btn-danger btn-sm mx-2">Reset</button>
+    </div>

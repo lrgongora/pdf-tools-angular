@@ -1,0 +1,270 @@
+@font-face {
+    font-family: Nunito;
+    src: url('/assets/styles/webfonts/Nunito-Regular.ttf');
+}
+
+body {
+    font-family: Nunito;
+}
+
+.drop-area {
+    margin-top: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.canvas {
+    cursor: move !important;
+    background-color: #fff;
+    box-shadow: 0 3px 6px -2px rgba(50, 50, 50, .3);
+}
+
+.viewer {
+    text-align: center;
+    background-color: #eee;
+    padding-top: 100px;
+    padding-bottom: 60px;
+    padding-left: 0;
+    width: 100%;
+    min-height: 500px;
+    margin: 0 auto;
+
+}
+
+.viewer li {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px 20px 0;
+}
+
+.page-wrap,
+.file-wrap {
+    margin: 10px;
+}
+
+.page-wrap:hover {
+    background-color: #ddd;
+}
+
+.page-tools,
+.file-tools {
+    opacity: 0;
+    min-height: 40px;
+    font-size: 1.2rem;
+    margin-bottom: -25px;
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    left: 0;
+}
+
+.button-group {
+    color: red;
+    border: 1px solid #089de3;
+    box-shadow: 0 3px 6px -2px rgba(50, 50, 50, .3);
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+li:hover div.page-tools,
+li:hover div.file-tools {
+    opacity: 1;
+}
+
+.button-delete i.fa-trash-alt {
+    cursor: pointer;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    z-index: 4;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.hidden {
+    display: none;
+}
+
+.dp-container {
+    margin: 0 auto;
+}
+
+.row {
+    margin: 0;
+}
+
+#main-dropzone {
+    padding: 0;
+}
+
+.dropzone {
+    border: none;
+}
+
+#drop-message {
+    border: 1px solid #089de3;
+    color: white;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    width: 280px;
+    margin: 35px auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+.fas.fa-file-upload {
+    font-size: 2rem;
+    float: left;
+    padding-right: 6px;
+}
+
+.main-modal {
+    background-color: #FFF;
+    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+    padding: 70px;
+    position: relative;
+    display: none;
+}
+
+.modal-close {
+    display: block;
+    position: absolute;
+    top: -35px;
+    right: 0;
+    z-index: 10000;
+    outline: none;
+    font-size: 30px;
+    line-height: 30px;
+    transition: transform .3s ease-in-out;
+    color: #FFF;
+}
+
+.bottom-fixed {
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 15px;
+    background-color: rgba(255, 212, 84, 0.8);
+    z-index: 601;
+}
+
+.submitBtn,
+#reset-button {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#main-navbar {
+    -webkit-box-shadow: 0 3px 6px 0 rgba(50, 50, 50, .3);
+    box-shadow: 0 3px 6px 0 rgba(50, 50, 50, .3);
+}
+
+a.btn.focus,
+a.btn:focus {
+    outline: 0;
+    box-shadow: none;
+    color: black;
+}
+
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+    color: black;
+}
+
+.filename {
+    white-space: nowrap;
+    width: 300px;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+#download-modal {
+    max-width: 500px;
+}
+
+a.merge-download-link {
+    text-decoration: none;
+    color: black;
+}
+
+.download-icon {
+    position: absolute;
+}
+
+i.fas.fa-download {
+    font-size: 45px;
+}
+
+span.download-tag,
+.download-filename {
+    margin-left: 60px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.download-tag {
+    font-weight: bold;
+}
+
+div#drop-message-zone {
+    position: absolute;
+    display: none;
+    font-size: 1.5rem;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+.invisible {
+    opacity: 0;
+}
+
+#error-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-item {
+    font-weight: bold;
+}
+
+.nav-link.disabled {
+    color: #6c757d;
+    pointer-events: auto;
+    cursor: not-allowed;
+}

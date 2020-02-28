@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import 'assets/styles/vendors/custombox.min.css';
+@import 'assets/styles/vendors/dropzone.css';
+@import 'assets/styles/site.css';
+@import '~@fortawesome/fontawesome-free/css/all.css';
