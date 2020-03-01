@@ -22,11 +22,8 @@ body {
 .viewer {
     text-align: center;
     background-color: #eee;
-    padding-top: 100px;
-    padding-bottom: 60px;
     padding-left: 0;
     width: 100%;
-    min-height: 500px;
     margin: 0 auto;
 
 }
@@ -90,7 +87,7 @@ li:hover div.file-tools {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    animation: spin 1.5s linear infinite;
+    animation: spin 1.4s linear infinite;
 }
 
 @keyframes spin {
@@ -135,6 +132,7 @@ li:hover div.file-tools {
     position: absolute;
     right: 0;
     left: 0;
+    top: 20%;
 }
 
 .fas.fa-file-upload {

@@ -1,0 +1,19 @@
+<!-- <div>Preview here!</div>
+<ng-content select="ngx-dropzone-label"></ng-content>
+<ngx-dropzone-remove-badge *ngIf="removable" (click)="_remove($event)">
+</ngx-dropzone-remove-badge> -->
+
+
+<li class="file-wrap">
+<div class="file-tools">
+<div class="button-group">
+<div class="button-delete delete-file">
+<i class="fas fa-trash-alt" *ngIf="removable" (click)="_remove($event)"></i>
+</div>
+</div>
+</div>
+<canvas class="canvas" #canvas>
+</canvas>
+<div class="filename"><ng-content select="ngx-dropzone-label"></ng-content></div>
+<!-- <div class="filesize" data-dz-size><ng-content select="ngx-dropzone-size"></ng-content></div> -->
+</li>

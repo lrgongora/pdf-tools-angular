@@ -3,9 +3,9 @@
             <li class="nav-item active"><a class="nav-link active" data-toggle="tab" href="#doc-view">Document View</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#page-view">Page View</a></li>
         </ul>
-        <div class="loader hidden"></div>
-        <form [action]="settings.targetURL" id="main-dropzone" method="post" class="dropzone">
-            <div id="drop-message" class="btn btn-group btn-primary dz-default dz-message"><span class="btn-lg"><i class="fas fa-file-upload"></i>Click here to upload</span></div>
+        <div class="loader" *ngIf="toggleLoader('show')"></div>
+        <form [action]="settings.targetURL" id="main-dropzone" method="post" (init)="onUploadInit($event)">
+            <!-- <div id="drop-message" class="btn btn-group btn-primary dz-default dz-message"><span class="btn-lg"><i class="fas fa-file-upload"></i>Click here to upload</span></div>
             <div id="drop-message-zone">Drop files here</div>
             <div class="tab-content">
                 <div id="doc-view" class="tab-pane active">
@@ -20,7 +20,21 @@
                         </ol>
                     </div>
                 </div>
-            </div>
+            </div> -->
+            <ngx-dropzone (change)="onSelect($event)" class="dropzone" [disableClick]="true" #drop>
+            <div id="drop-message" class="btn btn-group btn-primary" (click)="drop.showFileSelector()"><span class="btn-lg"><i class="fas fa-file-upload"></i>Click here to upload</span></div>
+
+    <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+      <div id="doc-view" class="tab-pane active">
+          <div id="files-container">
+              <ol id="pdf-files-list" class="viewer" [sortablejs]="files">
+                  <app-pdf-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)" ngProjectAs="ngx-dropzone-preview" [file]="f">
+    <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
+    </app-pdf-dropzone-preview>
+              </ol>
+          </div>
+                </div>
+</ngx-dropzone>
             <input type="hidden" name="pageOrder" id="pageOrder">
             <input type="hidden" name="fileOrder" id="fileOrder">
         </form>
