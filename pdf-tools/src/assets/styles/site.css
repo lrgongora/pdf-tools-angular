@@ -24,7 +24,7 @@ body {
     background-color: #eee;
     padding-left: 0;
     width: 100%;
-    margin: 0 auto;
+    height: 100%;
 
 }
 
@@ -82,7 +82,7 @@ li:hover div.file-tools {
     width: 120px;
     height: 120px;
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -132,7 +132,7 @@ li:hover div.file-tools {
     position: absolute;
     right: 0;
     left: 0;
-    top: 20%;
+    top: 5%;
 }
 
 .fas.fa-file-upload {

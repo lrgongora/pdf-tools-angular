@@ -1,8 +1,8 @@
   <section class="drop-area">
-        <ul class="nav nav-tabs justify-content-center" id="main-">
+        <!-- <ul class="nav nav-tabs justify-content-center" id="main-">
             <li class="nav-item active"><a class="nav-link active" data-toggle="tab" href="#doc-view">Document View</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#page-view">Page View</a></li>
-        </ul>
+        </ul> -->
         <div class="loader" *ngIf="toggleLoader('show')"></div>
         <form [action]="settings.targetURL" id="main-dropzone" method="post" (init)="onUploadInit($event)">
             <!-- <div id="drop-message" class="btn btn-group btn-primary dz-default dz-message"><span class="btn-lg"><i class="fas fa-file-upload"></i>Click here to upload</span></div>
@@ -21,20 +21,30 @@
                     </div>
                 </div>
             </div> -->
+              <tabs>
             <ngx-dropzone (change)="onSelect($event)" class="dropzone" [disableClick]="true" #drop>
             <div id="drop-message" class="btn btn-group btn-primary" (click)="drop.showFileSelector()"><span class="btn-lg"><i class="fas fa-file-upload"></i>Click here to upload</span></div>
 
-    <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
-      <div id="doc-view" class="tab-pane active">
+    <ngx-dropzone-label class="dropzone-message">Drop files here!</ngx-dropzone-label>
+    <!-- <tabs> -->
+      <tab id="doc-view" tabTitle="Document View" class="tab-pane active">
           <div id="files-container">
-              <ol id="pdf-files-list" class="viewer" [sortablejs]="files">
-                  <app-pdf-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)" ngProjectAs="ngx-dropzone-preview" [file]="f">
+              <ol id="pdf-files-list" class="viewer">
+                  <app-pdf-dropzone-preview *ngFor="let f of files" dragula="PDF_FILES" [removable]="true" (removed)="onRemove(f)" ngProjectAs="ngx-dropzone-preview" [file]="f" >
     <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
     </app-pdf-dropzone-preview>
               </ol>
           </div>
-                </div>
+      </tab>
+                <tab tabTitle="Page View" id="page-view" class="tab-pane">
+                    <div id="pages-container">
+                        <ol id="pdf-pages-list" class="viewer">
+                        </ol>
+                    </div>
+                </tab>
+
 </ngx-dropzone>
+</tabs>
             <input type="hidden" name="pageOrder" id="pageOrder">
             <input type="hidden" name="fileOrder" id="fileOrder">
         </form>

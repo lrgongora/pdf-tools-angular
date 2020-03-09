@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ViewChildren
 import { DropzoneComponent , DropzoneDirective, DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
 import Swal  from 'sweetalert2';
 import * as pdfjsLib from 'node_modules/pdfjs-dist/build/pdf.min.js'
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -26,6 +27,10 @@ onRemove(event) {
   console.log(event);
   this.files.splice(this.files.indexOf(event), 1);
 }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.files, event.previousIndex, event.currentIndex);
+  }
 
 
     // init: function() {

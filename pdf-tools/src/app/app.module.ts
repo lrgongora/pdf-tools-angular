@@ -13,6 +13,10 @@ import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import { DROPZONE_CONFIG } from 'ngx-dropzone-wrapper';
 import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
 import { SortablejsModule } from 'ngx-sortablejs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragulaModule } from 'ng2-dragula';
+import { TabModule } from 'angular-tabs-component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   autoProcessQueue: false,
@@ -41,7 +45,11 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     AppRoutingModule,
     NgxDropzoneModule,
     DropzoneModule,
-    SortablejsModule.forRoot({ animation: 150 })
+    SortablejsModule.forRoot({ animation: 150 }),
+    DragulaModule.forRoot(),
+    BrowserAnimationsModule,
+    DragDropModule,
+    TabModule
   ],
   providers: [
     {
